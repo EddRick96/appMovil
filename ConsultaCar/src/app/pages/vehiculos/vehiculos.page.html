@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Vehículos Detalles
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  
+  <ion-list lines="full">
+    
+    <ion-item *ngIf="car">
+      <ion-input required type="text" placeholder="Propietario" [(ngModel)] 
+      ="car.propietario"> </ion-input>
+    </ion-item>
+    <ion-item *ngIf="car">
+      <ion-input required type="text" placeholder="Matrícula" [(ngModel)] 
+      ="car.matricula"> </ion-input>
+    </ion-item>
+    <ion-item *ngIf="car">
+      <ion-input required type="text" placeholder="Modelo" [(ngModel)] 
+      ="car.modelo"> </ion-input>
+    </ion-item>
+    <ion-item *ngIf="car">
+      <ion-input required type="text" placeholder="Marca" [(ngModel)] 
+      ="car.marca"> </ion-input>
+    </ion-item>
+    <ion-item *ngIf="car">
+      <ion-input required type="text" placeholder="Color" [(ngModel)] 
+      ="car.color"> </ion-input>
+    </ion-item>
+    <ion-item *ngIf="car">
+      <ion-input required type="number" placeholder="# Puertas" [(ngModel)] 
+      ="car.puertas"> </ion-input>
+    </ion-item>
+      
+  </ion-list>
+  <ion-button expand="full" (click)="saveCar()">
+    Guardar
+  </ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+    <ion-fab-button color="danger" routerLink="/" routerDirection="forward" (click)="onRemove(carId)">
+      <ion-icon name="trash">
+  
+      </ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

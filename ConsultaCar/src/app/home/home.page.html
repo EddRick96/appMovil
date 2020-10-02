@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Vehículos Propietarios
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let vehiculo of cars">
+      <ion-item lines="inset" button [routerLink]="['/vehiculos', vehiculo.id]">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">
+              <ion-icon name="car-sport-outline" color="success"></ion-icon>
+            </ion-col>
+            <ion-col size="10">
+              <ion-label>
+          
+                {{vehiculo.propietario}}: {{vehiculo.marca}}
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="onRemove(item)" color="secondary">
+          <ion-icon name="checkmark" slot="end">
+
+          </ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/vehiculos" routerDirection="forward">
+      <ion-icon name="add">
+  
+      </ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

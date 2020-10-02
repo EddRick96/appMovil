@@ -1,0 +1,7 @@
+{
+  "name": "ConsultaCar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
